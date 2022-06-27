@@ -26,18 +26,22 @@ public class Timer : MonoBehaviour
         string minutes = ((int)t / 60).ToString();
         string secondes = (t % 60).ToString();
         timerText.text = minutes + ":" + secondes;
-
+        
 
         if ((int.Parse(minutes) == 1))
         {
             
-            if (J1.pointsJoueur > J2.pointsJoueur)
+            if (J1.pointsJoueur > 0)
             {
                 win.text = "Le joueur 1 a gagné";
             }
+            else if(J1.pointsJoueur == J2.pointsJoueur)
+            {
+                win.text = "Egalité";
+            }
             else
             {
-                win.text = "Le joueur 2 a gagné";
+                win.text = "Le joueur 2 à gagné";
             }
         }
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjetRamassable : MonoBehaviour
+public class ObjetRamassableP2 : MonoBehaviour
 {
     public Transform player;
     public Transform playerCam;
@@ -17,7 +17,6 @@ public class ObjetRamassable : MonoBehaviour
 
 
     private bool doubleObjet = false; // faire en sorte qu'on puisse prendre qu'un objet
-
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +27,7 @@ public class ObjetRamassable : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        if (dist <= 2f)
+        if (dist <= 1.5f)
         {
             distPlayer = true;
         }
@@ -38,7 +37,7 @@ public class ObjetRamassable : MonoBehaviour
         }
         //récupérer l'aliment
 
-        if (distPlayer && Input.GetKey(KeyCode.E) && doubleObjet == false)
+        if (distPlayer && Input.GetKey(KeyCode.Keypad1) && doubleObjet == false)
         {
             GetComponent<Rigidbody>().isKinematic = true;
             transform.parent = playerCam;
@@ -57,7 +56,7 @@ public class ObjetRamassable : MonoBehaviour
                 collision = false;
             }
             // Jetter l'aliment
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKey(KeyCode.Keypad3))
             {
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
@@ -66,26 +65,34 @@ public class ObjetRamassable : MonoBehaviour
                 doubleObjet = false;
             }
             //poser l'aliment
-            else if (Input.GetMouseButton(1))
+            else if(Input.GetKey(KeyCode.Keypad2))
             {
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
                 estPorté = false;
                 doubleObjet = false;
             }
+            
         }
 
 
         //=====================Fonction déposer automatiquement l'aliment==========================
-        
-        if (dist > 2f)
+        float dist2 = Vector3.Distance(gameObject.transform.position, objet.position);
+        if (dist2 <= 1f)
         {
-            GetComponent<Rigidbody>().isKinematic = false;
-            transform.parent = null;
-            estPorté = false;
-            doubleObjet = false;
+            collisionObjet = true;
         }
-       
+        else
+        {
+            collisionObjet = false;
+
+
+        }
+        //Il faudra ajouter dans ce if tout ce qu'on veut faire quand on dépose un aliment
+        if (collisionObjet)
+        {
+            gameObject.transform.position = new Vector3(1, 1, 1);
+        }
     }
     public void OnTriggerEnter()
     {
