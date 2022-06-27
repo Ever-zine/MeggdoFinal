@@ -24,6 +24,8 @@ public class VictoireJ1 : MonoBehaviour
     public Transform aliment8;
     private Vector3 a8;
 
+    public Transform aliment9;
+
     public int pointsJoueur;
 
     public Text text_points;
@@ -41,7 +43,7 @@ public class VictoireJ1 : MonoBehaviour
     void Start()
     {
         préparationPlat.text = "Salade";
-        compositionPlat.text = "Poisson,pain,fromage, \n ketchup,eau";
+        compositionPlat.text = "Poisson,pain,fromage, \n moutarde,eau";
         pointsJoueur = 0;
 
         a1 = aliment1.position;
@@ -71,7 +73,8 @@ public class VictoireJ1 : MonoBehaviour
             aliment5.transform.position = a5;
             pointsJoueur += 10;
             préparationPlat.text = "Burger";
-            compositionPlat.text = "Salaaade";
+            compositionPlat.text = "Salade,moutarde,eau";
+            aliment9.transform.position = new Vector3(29, (float)0.1, (float)7.3);
         }
 
         text_points.text ="Points J1 : " + pointsJoueur;
@@ -83,7 +86,8 @@ public class VictoireJ1 : MonoBehaviour
             aliment8.transform.position = a8;
             pointsJoueur += 5;
             préparationPlat.text = "Burger";
-            compositionPlat.text = "Poisson,pain,fromage, \n ketchup,eau";
+            compositionPlat.text = "Poisson,pain,fromage, \n moutarde,eau";
+            aliment9.transform.position = new Vector3(29, (float)0.1, (float)7.3);
         }
     }
 
