@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
 
     private float startTime;
     public VictoireJ1 J1;
-   // public VictoireJ2 J2;
+    public VictoireJ2 J2;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +28,10 @@ public class Timer : MonoBehaviour
         timerText.text = minutes + ":" + secondes;
 
 
-
-
-
-
         if ((int.Parse(minutes) == 1))
         {
-            if (J1.pointsJoueur > 0)
+            
+            if (J1.pointsJoueur > J2.pointsJoueur)
             {
                 win.text = "Le joueur 1 a gagné";
             }

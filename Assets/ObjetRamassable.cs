@@ -14,6 +14,9 @@ public class ObjetRamassable : MonoBehaviour
     private bool estPorté = false;
     private bool collision = false;
     private bool collisionObjet = false;
+
+
+    private bool doubleObjet = false; // faire en sorte qu'on puisse prendre qu'un objet
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +37,12 @@ public class ObjetRamassable : MonoBehaviour
         }
         //récupérer l'aliment
 
-        if (distPlayer && Input.GetKey(KeyCode.E))
+        if (distPlayer && Input.GetKey(KeyCode.E) && doubleObjet == false)
         {
             GetComponent<Rigidbody>().isKinematic = true;
             transform.parent = playerCam;
             estPorté = true;
+            doubleObjet = true;
             
         }
 
@@ -58,6 +62,7 @@ public class ObjetRamassable : MonoBehaviour
                 transform.parent = null;
                 estPorté = false;
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
+                doubleObjet = false;
             }
             //poser l'aliment
             else if (Input.GetMouseButton(1))
@@ -65,6 +70,7 @@ public class ObjetRamassable : MonoBehaviour
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
                 estPorté = false;
+                doubleObjet = false;
             }
         }
 

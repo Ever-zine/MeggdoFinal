@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VictoireJ1 : MonoBehaviour
+public class VictoireJ2 : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform aliment1;
@@ -40,7 +40,7 @@ public class VictoireJ1 : MonoBehaviour
 
     void Start()
     {
-        préparationPlat.text = "Salade";
+        préparationPlat.text = "Burger";
         compositionPlat.text = "Poisson,pain,fromage, \n ketchup,eau";
         pointsJoueur = 0;
 
@@ -64,6 +64,7 @@ public class VictoireJ1 : MonoBehaviour
 
         if (CheckBurger(aliment1) && CheckBurger(aliment2) && CheckBurger(aliment3) && CheckBurger(aliment4) && CheckBurger(aliment5) && préparationPlat.text == "Burger")
         {
+            
             aliment1.transform.position = a1;
             aliment2.transform.position = a2;
             aliment3.transform.position = a3;
@@ -74,7 +75,7 @@ public class VictoireJ1 : MonoBehaviour
             compositionPlat.text = "Salaaade";
         }
 
-        text_points.text ="Points J1 : " + pointsJoueur;
+        text_points.text ="Points J2 : " + pointsJoueur;
 
         if (CheckSalade(aliment6) && CheckSalade(aliment7) && CheckSalade(aliment8) && préparationPlat.text == "Salade")
         {
