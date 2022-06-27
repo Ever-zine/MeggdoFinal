@@ -77,22 +77,14 @@ public class ObjetRamassableP2 : MonoBehaviour
 
 
         //=====================Fonction déposer automatiquement l'aliment==========================
-        float dist2 = Vector3.Distance(gameObject.transform.position, objet.position);
-        if (dist2 <= 1f)
+        if (dist > 2f)
         {
-            collisionObjet = true;
+            GetComponent<Rigidbody>().isKinematic = false;
+            transform.parent = null;
+            estPorté = false;   
+            doubleObjet = false;
         }
-        else
-        {
-            collisionObjet = false;
-
-
-        }
-        //Il faudra ajouter dans ce if tout ce qu'on veut faire quand on dépose un aliment
-        if (collisionObjet)
-        {
-            gameObject.transform.position = new Vector3(1, 1, 1);
-        }
+        
     }
     public void OnTriggerEnter()
     {

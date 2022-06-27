@@ -38,13 +38,12 @@ public class ObjetRamassable : MonoBehaviour
         }
         //récupérer l'aliment
 
-        if (distPlayer && Input.GetKey(KeyCode.E) && doubleObjet == false)
+        if (distPlayer && Input.GetKey(KeyCode.E) && !doubleObjet)
         {
             GetComponent<Rigidbody>().isKinematic = true;
             transform.parent = playerCam;
             estPorté = true;
             doubleObjet = true;
-            
         }
 
         if (estPorté)
