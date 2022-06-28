@@ -9,6 +9,12 @@ public class MenuPrincipal : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void MenuRegles()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     public void Quitter()
     {
         Application.Quit();
