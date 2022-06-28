@@ -57,13 +57,7 @@ public class ObjetRamassable : MonoBehaviour
                 
             }
             // Jetter l'aliment
-            if (Input.GetMouseButtonDown(0))
-            {
-                GetComponent<Rigidbody>().isKinematic = false;
-                transform.parent = null;
-                estPorté = false;
-                GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
-            }
+           
             //poser l'aliment
             else if (Input.GetKey(KeyCode.Keypad2))
             {

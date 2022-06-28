@@ -8,6 +8,8 @@ public class Coup1 : MonoBehaviour
     public float prochainCoup = 0;
     public ObjetRamassableP2 unObjet;
     public Transform player;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,8 @@ public class Coup1 : MonoBehaviour
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
                 unObjet.estPorté = false;
+               
+
             }
         }
     }

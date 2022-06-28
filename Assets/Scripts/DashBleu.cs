@@ -30,8 +30,8 @@ public class DashBleu : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Keypad3))
             {
                 StartCoroutine(Dashh());
-               
                 prochainCoup = Time.time + coolDown;
+                anim.Play("Dash");
             }
         }
 

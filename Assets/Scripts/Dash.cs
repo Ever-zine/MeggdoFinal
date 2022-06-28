@@ -31,6 +31,7 @@ public class Dash : MonoBehaviour
             {
                 StartCoroutine(Dashh());
                 prochainCoup = Time.time + coolDown;
+                anim.Play("Dash");
             }
         }
 
