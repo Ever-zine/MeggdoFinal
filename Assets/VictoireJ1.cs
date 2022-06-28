@@ -94,7 +94,7 @@ public class VictoireJ1 : MonoBehaviour
             aliment5.transform.position = a5;
             pointsJoueur += 10;
             préparationPlat.text = "Burger";
-            compositionPlat.text = "Steak,pain,fromage,\nmoutarde,toamte\nvin"; 
+            compositionPlat.text = "Steak,pain,fromage,\nmoutarde,tomate\nvin"; 
             Burger.transform.position = new Vector3(29, (float)0.1, (float)7.3);
 
         }

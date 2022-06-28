@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Timer : MonoBehaviour
 {
@@ -24,9 +25,9 @@ public class Timer : MonoBehaviour
     {
         float t = Time.time - startTime;
         string minutes = ((int)t / 60).ToString();
-        string secondes = (t % 60).ToString();
-        timerText.text = minutes + ":" + secondes;
-        
+        string secondes = Math.Round((t % 60), 0).ToString();
+        timerText.text = minutes + ":" + (Math.Round((t % 60), 0) < 10 ? "0" + secondes : secondes == "60" ? "59" : secondes);
+
 
         if ((int.Parse(minutes) == 3))
         {

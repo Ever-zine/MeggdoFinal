@@ -57,7 +57,7 @@ public class VictoireJ2 : MonoBehaviour
     void Start()
     {
         préparationPlat.text = "Burger";
-        compositionPlat.text = "Steak,pain,fromage,\nmoutarde,toamte\nvin";
+        compositionPlat.text = "Steak,pain,fromage,\nmoutarde,tomate\nvin";
         pointsJoueur = 0;
 
 
@@ -92,7 +92,7 @@ public class VictoireJ2 : MonoBehaviour
             aliment5.transform.position = a5;
             pointsJoueur += 10;
             préparationPlat.text = "Burger";
-            compositionPlat.text = "Steak,pain,fromage,\nmoutarde,toamte\nvin";
+            compositionPlat.text = "Steak,pain,fromage,\nmoutarde,tomate\nvin";
 
         }
 
