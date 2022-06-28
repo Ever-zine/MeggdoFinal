@@ -27,10 +27,9 @@ public class Dash : MonoBehaviour
         if (Time.time > prochainCoup) // si le cooldown son passe
         {
             //Faire un dash
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 StartCoroutine(Dashh());
-                anim.Play("Dash");
                 prochainCoup = Time.time + coolDown;
             }
         }

@@ -11,7 +11,7 @@ public class ObjetRamassableP2 : MonoBehaviour
 
     
     private bool distPlayer = false;
-    private bool estPorté = false;
+    public bool estPorté = false;
     private bool collision = false;
     private bool collisionObjet = false;
 
