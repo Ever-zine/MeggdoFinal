@@ -21,7 +21,7 @@ public class Coup1 : MonoBehaviour
 
         if (Time.time > prochainCoup) // si le cooldown son passe
         {
-            if (Input.GetKeyDown(KeyCode.A) && dist < 3f) // si appuis sur la touche
+            if (Input.GetKeyDown(KeyCode.F) && dist < 3f) // si appuis sur la touche
             {
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
