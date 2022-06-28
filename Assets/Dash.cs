@@ -10,7 +10,9 @@ public class Dash : MonoBehaviour
     public float dashspeed;
     public float dastime;
     public Animator anim;
-    public Animator anima;
+    public float coolDown = 5;
+    public float prochainCoup = 0;
+
 
     void Start()
     {
@@ -21,19 +23,28 @@ public class Dash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+
+        if (Time.time > prochainCoup) // si le cooldown son passe
         {
-            StartCoroutine(Dashh());
-            anim.Play("Dash");
+            //Faire un dash
+            if (Input.GetMouseButtonDown(0))
+            {
+                StartCoroutine(Dashh());
+                anim.Play("Dash");
+                prochainCoup = Time.time + coolDown;
+            }
         }
 
 
+        
+
+     
     }
 
     IEnumerator Dashh()
     {
         float startime = Time.time;
-        while (Time.time < startime + dastime)
+        while(Time.time < startime + dastime)
         {
             transform.Translate(Vector3.forward * dashspeed);
 

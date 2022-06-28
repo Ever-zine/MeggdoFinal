@@ -27,7 +27,7 @@ public class ObjetRamassableP2 : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        if (dist <= 1.5f)
+        if (dist <= 2f)
         {
             distPlayer = true;
         }
@@ -37,12 +37,11 @@ public class ObjetRamassableP2 : MonoBehaviour
         }
         //récupérer l'aliment
 
-        if (distPlayer && Input.GetKey(KeyCode.Keypad1) && doubleObjet == false)
+        if (distPlayer && Input.GetKey(KeyCode.E))
         {
             GetComponent<Rigidbody>().isKinematic = true;
             transform.parent = playerCam;
             estPorté = true;
-            doubleObjet = true;
             
         }
 
@@ -65,7 +64,7 @@ public class ObjetRamassableP2 : MonoBehaviour
                 doubleObjet = false;
             }
             //poser l'aliment
-            else if(Input.GetKey(KeyCode.Keypad2))
+            else if(Input.GetKey(KeyCode.R))
             {
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;

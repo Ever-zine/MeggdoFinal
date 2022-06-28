@@ -48,7 +48,7 @@ public class VictoireJ1 : MonoBehaviour
     public Text préparationPlat;
     public Text compositionPlat;
 
-    
+   
 
     
 
@@ -58,24 +58,25 @@ public class VictoireJ1 : MonoBehaviour
     void Start()
     {
         préparationPlat.text = "Salade";
-        compositionPlat.text = "Salade,tomate,oeuf, \n bière";
+        compositionPlat.text = "Salade,tomate,oeuf,\n bière";
         pointsJoueur = 0;
 
-        a1 = aliment1.position;
-        a2 = aliment2.position;
-        a3 = aliment3.position;
-        a4 = aliment4.position;
-        a5 = aliment5.position;
-        a6 = aliment6.position;
-        a7 = aliment7.position;
-        a8 = aliment8.position;
-        a9 = aliment9.position;
-        a10 = aliment10.position;
-        a11 = aliment11.position;
-        a12 = aliment12.position;
-        a13 = aliment13.position;
-        a14 = aliment14.position;
-        a15 = aliment15.position;
+        a1 = new Vector3((float)3.13, (float)0.37, (float)3.67);
+        a2 = new Vector3((float)7.38, (float)0.543, (float)3.81);
+        a3 = new Vector3((float)9.5, (float)0.425, (float)3.6);
+        a4 = new Vector3((float)6, (float)0.78, (float)11.88);
+        a5 = new Vector3((float)17.886, (float)0.54, (float)3.462);
+        a6 = new Vector3((float)13.99, (float)1.032, (float)10.262);
+        a7 = new Vector3((float)14.01, (float)0.84, (float)13.17);
+        a8 = new Vector3((float)13.71, (float)0.86, (float)16.52);
+        a9 = new Vector3((float)14.8, (float)0.78, (float)3.6);
+        a10 = new Vector3((float)5.32, (float)0.27, (float)3.73);
+        a11 = new Vector3((float)7.38, (float)0.543, (float)3.81);
+        a12 = new Vector3((float)9.5, (float)0.425, (float)3.6);
+        a13 = new Vector3((float)6, (float)0.78, (float)11.88);
+        a14 = new Vector3((float)14.01, (float)0.84, (float)13.17);
+        a15 = new Vector3((float)21.26, (float)1.15, (float)3.57);
+
     }
 
     // Update is called once per frame
@@ -132,7 +133,7 @@ public class VictoireJ1 : MonoBehaviour
     {
         bool verif = false;
         float dist = Vector3.Distance(gameObject.transform.position, a.position);
-        if (dist < 2f)
+        if (dist < 2.5f)
         {
             verif = true;
         }

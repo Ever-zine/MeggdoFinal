@@ -9,14 +9,13 @@ public class ObjetRamassable : MonoBehaviour
     public Transform objet;
     public float throwForce = 10;
 
-    
+    public ObjetRécupéré p1;
     private bool distPlayer = false;
     private bool estPorté = false;
     private bool collision = false;
     private bool collisionObjet = false;
 
 
-    private bool doubleObjet = false; // faire en sorte qu'on puisse prendre qu'un objet
 
     // Start is called before the first frame update
     void Start()
@@ -38,12 +37,13 @@ public class ObjetRamassable : MonoBehaviour
         }
         //récupérer l'aliment
 
-        if (distPlayer && Input.GetKey(KeyCode.E) && !doubleObjet)
+        if (distPlayer && Input.GetKey(KeyCode.Keypad1) )
         {
             GetComponent<Rigidbody>().isKinematic = true;
             transform.parent = playerCam;
             estPorté = true;
-            doubleObjet = true;
+            
+            
         }
 
         if (estPorté)
@@ -54,6 +54,7 @@ public class ObjetRamassable : MonoBehaviour
                 transform.parent = null;
                 estPorté = false;
                 collision = false;
+                
             }
             // Jetter l'aliment
             if (Input.GetMouseButtonDown(0))
@@ -62,15 +63,13 @@ public class ObjetRamassable : MonoBehaviour
                 transform.parent = null;
                 estPorté = false;
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
-                doubleObjet = false;
             }
             //poser l'aliment
-            else if (Input.GetMouseButton(1))
+            else if (Input.GetKey(KeyCode.Keypad2))
             {
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
                 estPorté = false;
-                doubleObjet = false;
             }
         }
 
@@ -82,10 +81,11 @@ public class ObjetRamassable : MonoBehaviour
             GetComponent<Rigidbody>().isKinematic = false;
             transform.parent = null;
             estPorté = false;
-            doubleObjet = false;
         }
        
     }
+
+    
     public void OnTriggerEnter()
     {
         if (estPorté)

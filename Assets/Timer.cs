@@ -28,7 +28,7 @@ public class Timer : MonoBehaviour
         timerText.text = minutes + ":" + secondes;
         
 
-        if ((int.Parse(minutes) == 1))
+        if ((int.Parse(minutes) == 3))
         {
             
             if (J1.pointsJoueur > 0)

@@ -39,8 +39,7 @@ public class VictoireJ2 : MonoBehaviour
     private Vector3 a14;
     private Vector3 a15;
 
-    public Transform Burger;
-    public Transform Salade;
+    
     public int pointsJoueur;
 
     public Text text_points;
@@ -60,6 +59,7 @@ public class VictoireJ2 : MonoBehaviour
         préparationPlat.text = "Burger";
         compositionPlat.text = "Steak,pain,fromage,\nmoutarde,toamte\nvin";
         pointsJoueur = 0;
+
 
         a1 = aliment1.position;
         a2 = aliment2.position;
@@ -85,7 +85,6 @@ public class VictoireJ2 : MonoBehaviour
 
         if (CheckAliment(aliment1) && CheckAliment(aliment2) && CheckAliment(aliment3) && CheckAliment(aliment4) && CheckAliment(aliment5) && préparationPlat.text == "Burger au Poisson")
         {
-
             aliment1.transform.position = a1;
             aliment2.transform.position = a2;
             aliment3.transform.position = a3;
@@ -94,7 +93,6 @@ public class VictoireJ2 : MonoBehaviour
             pointsJoueur += 10;
             préparationPlat.text = "Burger";
             compositionPlat.text = "Steak,pain,fromage,\nmoutarde,toamte\nvin";
-            Burger.transform.position = new Vector3(29, (float)0.1, (float)7.3);
 
         }
 
@@ -108,7 +106,6 @@ public class VictoireJ2 : MonoBehaviour
             pointsJoueur += 6;
             préparationPlat.text = "Burger au Poisson";
             compositionPlat.text = "Poisson,pain,fromage,moutarde,\neau";
-            Salade.transform.position = new Vector3((float)29.96, (float)0.636, (float)8.72);
         }
 
         if (CheckAliment(aliment10) && CheckAliment(aliment11) && CheckAliment(aliment12) && CheckAliment(aliment13) && CheckAliment(aliment14) && CheckAliment(aliment15) && préparationPlat.text == "Burger")
@@ -123,8 +120,6 @@ public class VictoireJ2 : MonoBehaviour
             pointsJoueur += 12;
             préparationPlat.text = "Salade";
             compositionPlat.text = "Salade,tomate,oeuf,\nbière";
-            Burger.transform.position = new Vector3(29, (float)0.1, (float)7.3);
-            Burger.transform.position = new Vector3(29, (float)0.1, (float)7.3);
         }
         text_points.text = "Points J2 : " + pointsJoueur;
     }
@@ -133,7 +128,7 @@ public class VictoireJ2 : MonoBehaviour
     {
         bool verif = false;
         float dist = Vector3.Distance(gameObject.transform.position, a.position);
-        if (dist < 2f)
+        if (dist < 2.5f)
         {
             verif = true;
         }
